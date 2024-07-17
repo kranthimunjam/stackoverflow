@@ -20,7 +20,7 @@ public class CommentController {
         this.commentService = commentService;
     }
 
-    @PostMapping
+    @PostMapping("/")
     ResponseEntity<CommentResponseDTO> postComment(@RequestBody CommentRequestDTO request){
         return commentService.postComment(request);
     }

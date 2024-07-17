@@ -7,11 +7,11 @@ import org.stackoverflow.post.entity.Post;
 
 import java.util.List;
 
-@Repository
-public interface PostRepository extends JpaRepository<Post, String> {
+// @Repository
+public interface PostRepository {
     Post getPostById(String questioId);
 
-    @Query("Select ")
+    // @Query("Select ")
     List<Post> getAnswers(String questionId);
 
 
