@@ -3,6 +3,8 @@ package org.stackoverflow.user.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,17 +17,15 @@ import org.stackoverflow.user.service.AuthService;
 import org.stackoverflow.user.service.TokenService;
 import org.stackoverflow.user.service.User;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
-
 @RestController
 @RequestMapping("/api/v1/auth")
 public class AuthController {
-    // @Autowired
-    // // private AuthenticationManager authenticationManager;
+    @Autowired
+    private AuthenticationManager authenticationManager;
     @Autowired
     private AuthService service;
-    // @Autowired
-    // private TokenService tokenService;
+    @Autowired
+    private TokenService tokenService;
 
     @PostMapping("/signup")
     public ResponseEntity<?> signUp(@RequestBody  SignUpDTO data) {
@@ -39,9 +39,9 @@ public class AuthController {
 
     @PostMapping("/signin")
     public ResponseEntity<JwtDTO> signIn(@RequestBody SignInDTO data) {
-        // var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
-        // var authUser = authenticationManager.authenticate(usernamePassword);
-        // var accessToken = tokenService.generateAccessToken((User) authUser.getPrincipal());
-        return ResponseEntity.ok(new JwtDTO("accessToken"));
+        var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
+        var authUser = authenticationManager.authenticate(usernamePassword);
+        var accessToken = tokenService.generateAccessToken((User) authUser.getPrincipal());
+        return ResponseEntity.ok(new JwtDTO(accessToken));
     }
 }
