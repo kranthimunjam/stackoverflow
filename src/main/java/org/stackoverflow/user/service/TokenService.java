@@ -11,7 +11,7 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
-@Service
+// @Service
 public class TokenService {
     // @Value("${security.jwt.token.secret-key}")
     private String JWT_SECRET="SECRET";

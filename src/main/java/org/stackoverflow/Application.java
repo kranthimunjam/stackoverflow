@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 @EnableJpaRepositories(basePackages = "org.stackoverflow.userservice")
-@EntityScan(basePackages = "org.stackoverflow.userservice")
+// @EntityScan(basePackages = "org.stackoverflow.userservice")
 @SpringBootApplication
 // @PropertySource("file:${user.dir}/.env")
 public class Application {
