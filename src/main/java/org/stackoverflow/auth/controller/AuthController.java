@@ -1,21 +1,20 @@
-package org.stackoverflow.user.controller;
+package org.stackoverflow.auth.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.stackoverflow.user.dto.JwtDTO;
-import org.stackoverflow.user.dto.SignInDTO;
-import org.stackoverflow.user.dto.SignUpDTO;
-import org.stackoverflow.user.service.AuthService;
-import org.stackoverflow.user.service.TokenService;
-import org.stackoverflow.user.service.User;
+import org.stackoverflow.auth.dto.JwtDTO;
+import org.stackoverflow.auth.dto.SignInDTO;
+import org.stackoverflow.auth.dto.SignUpDTO;
+import org.stackoverflow.auth.service.AuthService;
+import org.stackoverflow.auth.service.TokenService;
+import org.stackoverflow.auth.service.User;
 
 @RestController
 @RequestMapping("/api/v1/auth")

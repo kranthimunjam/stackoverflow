@@ -1,4 +1,4 @@
-package org.stackoverflow.user.util;
+package org.stackoverflow.auth.util;
 
 public enum UserRole {
     ADMIN("admin"),

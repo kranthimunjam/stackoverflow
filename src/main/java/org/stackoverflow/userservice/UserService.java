@@ -2,7 +2,7 @@ package org.stackoverflow.userservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.stackoverflow.user.service.User;
+import org.stackoverflow.auth.service.User;
 
 import java.util.List;
 

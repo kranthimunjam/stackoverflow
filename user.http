@@ -1,7 +1,6 @@
 #### SIGNUP USER
 POST https://scaling-space-goldfish-97699j6q445h9p9-8080.app.github.dev/api/v1/auth/signup HTTP/1.1
 content-type: application/json
-
 {
     "login": "mail2@mail.com",
     "password": "password",
@@ -18,10 +17,9 @@ content-type: application/json
 }
 
 ####
-
 GET https://scaling-space-goldfish-97699j6q445h9p9-8080.app.github.dev/users HTTP/1.1
 Accept: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYWlsMkBtYWlsLmNvbSIsInVzZXJuYW1lIjoibWFpbDJAbWFpbC5jb20iLCJleHAiOjE3MjEzNDg5NDZ9.XDjiBevGjbSKysXwKp38Ur_PS9Ss7bM3ZaubZHaWU-k
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYWlsMkBtYWlsLmNvbSIsInVzZXJuYW1lIjoibWFpbDJAbWFpbC5jb20iLCJleHAiOjE3MjEzNDkxMzF9._hC4Q4ak-YenQE4IPfX-2nbRIVjEbNxQ5hQskn9FJbg
 
 ###
 GET https://scaling-space-goldfish-97699j6q445h9p9-8080.app.github.dev/users/1 HTTP/1.1

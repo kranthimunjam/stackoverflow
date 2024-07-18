@@ -1,8 +1,8 @@
-package org.stackoverflow.user.dto;
+package org.stackoverflow.auth.dto;
 
 import org.antlr.v4.runtime.misc.NotNull;
 import org.springframework.lang.NonNull;
-import org.stackoverflow.user.util.UserRole;
+import org.stackoverflow.auth.util.UserRole;
 
 public record SignUpDTO(
         @NotNull

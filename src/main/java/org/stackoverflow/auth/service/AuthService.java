@@ -1,4 +1,4 @@
-package org.stackoverflow.user.service;
+package org.stackoverflow.auth.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -6,7 +6,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.stackoverflow.user.dto.SignUpDTO;
+import org.stackoverflow.auth.dto.SignUpDTO;
 import org.stackoverflow.userservice.UserRepository;
 
 @Service
