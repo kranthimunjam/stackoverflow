@@ -2,6 +2,7 @@ package org.stackoverflow.userservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.stackoverflow.user.service.User;
 
 import java.util.List;
 
@@ -13,22 +14,22 @@ public class UserController {
     private UserService userService;
 
     @GetMapping
-    public List<UserEntity> getAllUsers() {
+    public List<User> getAllUsers() {
         return userService.findAll();
     }
 
     @GetMapping("/{id}")
-    public UserEntity getUserById(@PathVariable Long id) {
+    public User getUserById(@PathVariable Long id) {
         return userService.findById(id);
     }
 
     @PostMapping
-    public void createUser(@RequestBody UserEntity user) {
+    public void createUser(@RequestBody User user) {
         userService.save(user);
     }
 
     @PutMapping("/{id}")
-    public void updateUser(@PathVariable Long id, @RequestBody UserEntity user) {
+    public void updateUser(@PathVariable Long id, @RequestBody User user) {
         user.setId(id);
         userService.save(user);
     }

@@ -1,3 +1,4 @@
+#### SIGNUP USER
 POST https://scaling-space-goldfish-97699j6q445h9p9-8080.app.github.dev/api/v1/auth/signup HTTP/1.1
 content-type: application/json
 
@@ -7,7 +8,7 @@ content-type: application/json
     "role": "ADMIN"
 }
 
-###
+#### SIGNIN USER
 POST https://scaling-space-goldfish-97699j6q445h9p9-8080.app.github.dev/api/v1/auth/signin HTTP/1.1
 content-type: application/json
 
@@ -15,27 +16,20 @@ content-type: application/json
     "login": "mail2@mail.com",
     "password": "password"
 }
-###
-
-POST https://scaling-space-goldfish-97699j6q445h9p9-8080.app.github.dev/users HTTP/1.1
-content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYWlsMkBtYWlsLmNvbSIsInVzZXJuYW1lIjoibWFpbDJAbWFpbC5jb20iLCJleHAiOjE3MjEzNDg1MjJ9.d7w75IWO7wvNJsqj6KxeE13HoZh3NeIeY9PbaiSmNuQ
-{
-    "name": "user1",
-    "email": "mail@mail.com",
-    "password": "password"
-}
 
 ####
 
 GET https://scaling-space-goldfish-97699j6q445h9p9-8080.app.github.dev/users HTTP/1.1
 Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYWlsMkBtYWlsLmNvbSIsInVzZXJuYW1lIjoibWFpbDJAbWFpbC5jb20iLCJleHAiOjE3MjEzNDg5NDZ9.XDjiBevGjbSKysXwKp38Ur_PS9Ss7bM3ZaubZHaWU-k
 
 ###
-GET https://scaling-space-goldfish-97699j6q445h9p9-8080.app.github.dev/users/2 HTTP/1.1
+GET https://scaling-space-goldfish-97699j6q445h9p9-8080.app.github.dev/users/1 HTTP/1.1
 Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYWlsMkBtYWlsLmNvbSIsInVzZXJuYW1lIjoibWFpbDJAbWFpbC5jb20iLCJleHAiOjE3MjEzNDg5NDZ9.XDjiBevGjbSKysXwKp38Ur_PS9Ss7bM3ZaubZHaWU-k
 
 
 ###
-DELETE https://scaling-space-goldfish-97699j6q445h9p9-8080.app.github.dev/users/2 HTTP/1.1
+DELETE https://scaling-space-goldfish-97699j6q445h9p9-8080.app.github.dev/users/1 HTTP/1.1
 Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYWlsMkBtYWlsLmNvbSIsInVzZXJuYW1lIjoibWFpbDJAbWFpbC5jb20iLCJleHAiOjE3MjEzNDg5NDZ9.XDjiBevGjbSKysXwKp38Ur_PS9Ss7bM3ZaubZHaWU-k

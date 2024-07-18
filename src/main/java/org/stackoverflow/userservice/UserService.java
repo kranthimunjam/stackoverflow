@@ -2,6 +2,7 @@ package org.stackoverflow.userservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.stackoverflow.user.service.User;
 
 import java.util.List;
 
@@ -11,15 +12,15 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public List<UserEntity> findAll() {
+    public List<User> findAll() {
         return userRepository.findAll();
     }
 
-    public UserEntity findById(Long id) {
+    public User findById(Long id) {
         return userRepository.findById(id).orElse(null);
     }
 
-    public void save(UserEntity user) {
+    public void save(User user) {
         userRepository.save(user);
     }
 
