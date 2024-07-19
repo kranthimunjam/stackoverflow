@@ -17,8 +17,6 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.stackoverflow.auth.service.AuthService;
 import org.stackoverflow.auth.service.SecurityFilter;
-import org.stackoverflow.userservice.UserRepository;
-import org.stackoverflow.userservice.UserService;
 
 @Configuration
 @EnableWebSecurity
@@ -42,11 +40,13 @@ public class AuthConfig {
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+        httpSecurity.headers().frameOptions().disable();
         return httpSecurity
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(HttpMethod.POST, "/api/v1/auth/signup", "/api/v1/auth/signin").permitAll()
+                        .requestMatchers("/h2/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/comment/v1/books")
                         .hasRole("ADMIN")
                         .anyRequest().authenticated())
